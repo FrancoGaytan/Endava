@@ -16,7 +16,8 @@
     max-width: 450px;
     height: 100vh;
     max-height: 745px;
-    background-color: rgb(228, 96, 8);
+    color: aliceblue;
+    background-image: url(img/fondoApp.jpg);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -24,9 +25,35 @@
     border: 1px solid black;
 }
 
+.test1{
+    position: relative;
+    /* display: flex; */
+   /*  align-items: center;
+    justify-content: space-around; */
+}
+
+.test1 div{
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: calc(50% + 100px);
+    transform: translate(-50%, -50%);
+}
+
+.titleApp{
+    font-family: fantasy;
+    text-align: center;
+    font-size: 30px;
+    color: aliceblue;
+}
+
 #group-btn{
     display: flex;
     width: 100%;
+
+    /* display: grid;
+    grid-template-columns: repeat(5,1fr); */
+    
 }
 
 #group-btn > button > img{
