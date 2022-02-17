@@ -18,6 +18,11 @@ const spockBtn = document.getElementById("spock");
 const resultText = document.getElementById("start-text");
 const userImg = document.getElementById("user-img");
 const machineImg = document.getElementById("machine-img");
+const scorePc = document.getElementById("marcadorPc");
+const scoreUser = document.getElementById("marcadorUser");
+
+let scorePcCount = 0;
+let scoreUserCount = 0;
 
 
 rockBtn.addEventListener("click", ()=>{
@@ -49,14 +54,19 @@ function Play(userOption){
     machineImg.src = "img/"+machineOption+".png";
 
     switch(result){
+
         case TIE:
             resultText.innerHTML =  "Empate";
             break;
+
         case WIN:
-            resultText.innerHTML =  "Ganaste";
+            resultText.innerHTML =  "Jugador Gana";
+            scoreUser.innerHTML = ++scoreUserCount;
             break;
+
         case LOSE:
-            resultText.innerHTML =  "Perdiste";
+            resultText.innerHTML =  "PC Gana";
+            scorePc.innerHTML = ++scorePcCount;
             break;
     }
 }
