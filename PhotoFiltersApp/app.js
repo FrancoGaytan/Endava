@@ -8,6 +8,16 @@ const downloadBtn = document.getElementById('download-btn');
 const uploadFile = document.getElementById('upload-file');
 const revertBtn = document.getElementById('revert-btn');
 
+
+//variables del drag and drop
+
+const dropArea = document.querySelector(".drop-area");
+const dragText = dropArea.querySelector("h4");
+const input = dropArea.querySelector("#input-file");
+
+//variables del drag and drop
+
+
 // add filters and effects
 
 document.addEventListener('click', e =>{
@@ -146,7 +156,7 @@ function download(canvas, filename){
     //creo el link
     const link = document.createElement('a');//el a xq quiero crear un link
 
-    link.download = filename;
+    link.download = filename ?? "imagenEditada";
     link.href = canvas.toDataURL('image/jpeg', 0.8);
 
     //creo un nuevo mouseEvent
@@ -154,4 +164,71 @@ function download(canvas, filename){
     e = new MouseEvent('click');
     link.dispatchEvent(e);
     
+}
+
+
+//funcionamiento del drag and drop
+
+input.addEventListener("change", (e)=> {
+    files = this.files;
+    dropArea.classList.add("active");
+    showFiles(files);
+    dropArea.classList.remove("active");
+});
+
+
+dropArea.addEventListener("dragover", (e)=> {
+    e.preventDefault();
+    dropArea.classList.add("active");
+    dragText.textContent = "Suelta para subir tu imagen";
+});
+
+
+dropArea.addEventListener("dragleave", (e)=> {
+    e.preventDefault();
+    dropArea.classList.remove("active");
+    dragText.textContent = "Arrastra y suelta tu imagen aqui";
+});
+
+
+dropArea.addEventListener("drop", (e)=> {
+    e.preventDefault();
+    files = e.dataTransfer.files;//esto es para que obtenga las referencias de las img
+    showFiles(files);
+    dropArea.classList.remove("active");
+    dragText.textContent = "Arrastra y suelta tu imagen aqui";
+});
+
+
+function showFiles(files){
+    if(files.length === 1){
+        processFile(files[0]);
+    }else{
+        alert("Insertar solamente un archivo");
+    }
+}
+
+function processFile(file){
+    const docType = file.type;
+    const validExtensions = ["image/jpg", "image/jpeg", "image/png"];
+
+    if(validExtensions.includes(docType)){
+        const fileReader = new FileReader();
+        fileReader.readAsDataURL(file);
+        
+        fileReader.onloadend = ()=>{
+            
+            const img = new Image();
+            img.src = fileReader.result;
+            img.onload = function(){/*cuando esta fuente se carga le pongo la funcion para que la pase al canvas*/
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0, img.width, img.height);
+            canvas.removeAttribute('data-caman-id');
+        };
+        }
+
+    }else{
+        alert("tipo de archivo invalido");
+    }
 }
