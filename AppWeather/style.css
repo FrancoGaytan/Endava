@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*para darle todo el formato sin que suba los margin y los padings */
+
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 16rem;
+    height: 32.5rem;
+    border: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 1rem;
+    -webkit-box-shadow:7px 7px 5px 0px rgba(50, 50, 50, 0.29);
+    -moz-box-shadow:7px 7px 5px 0px rgba(50, 50, 50, 0.29);
+    box-shadow:7px 7px 5px 0px rgba(50, 50, 50, 0.29);
+}
+
+.container.day{
+    background-image: url(img/dia.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container.night{
+    background-image: url(img/noche.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container.rain{
+    background-image: url(img/lluvia.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.inputTemp{
+    margin: 1rem auto; /* con esto el margen superior va a tener 1 rem y a los costados automatico */
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0.4; /*para que toda esta seccion ocupe el 0.4% del container */
+}
+
+.search_submit{
+    display: flex;
+}
+
+.search{
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.search:focus{
+   outline: none; 
+}
+
+.inputTemp_number{
+    display: flex;
+    align-items: center;
+}
+
+.inputTemp_celsius{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 4rem;
+}
+
+.inputTemp_symbol{
+    font-size: 3rem;
+}
+
+.location{
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.location_date{
+    margin: 1.5rem;
+}
+
+.inputTemp_description, .location_city{
+    font-size: 1.3rem;
+}
+
+.weather{
+    flex: 0.1;
+    border-top: 2px solid #333;
+    display: flex;
+    justify-content: space-around; /*porque quiero dejar separacion*/
+    align-items: center;
+}
+
+.weather_min >span{
+    font-size: 1.4rem;
+    color: blue;
+}
+
+.weather_max >span{
+    font-size: 1.4rem;
+    color: tomato;
+}
+
+.search_submit >button{
+    visibility: hidden;
+}
+
+.container.night .inputTemp_number{
+    color: white;
+}
+
+.container.day .inputTemp_number{
+    color: black;
+}
+
+.container.night .inputTemp_description{
+    color: white;
+}
+
+.container.day .inputTemp_description{
+    color: black;
+}
+
+.container.night .location_city{
+    color: white;
+}
+
+.container.day .location_city{
+    color: black;
+}
+
+.container.night .location_date{
+    color: white;
+    font-weight: bolder;
+}
+
+.container.day .location_date{
+    color: black;
+}
+
+.container.night .weather_min{
+    color: white;
+}
+
+.container.day .weather_min{
+    color: black;
+}
+
+.container.night .weather_max{
+    color: white;
+}
+
+.container.day .weather_max{
+    color: black;
+}
