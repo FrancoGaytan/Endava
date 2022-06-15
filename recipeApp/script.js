@@ -191,6 +191,22 @@ searchBtn.addEventListener('click', async ()=>{
     
 });
 
+document.addEventListener('keydown', async (e)=>{
+  if(e.key === "Enter"){
+      const search = serchTerm.value;
+      const meals = await getMealsBySearch(search);
+
+      mealsEl.innerHTML = "";
+      mealPopup.classList.add("hidden");
+
+      if (meals) {
+        meals.forEach((meal) => {
+          addMeal(meal);
+        });
+      }
+  }
+});
+
 popupCloseBtn.addEventListener('click',()=>{
     mealPopup.classList.add('hidden');
 });
