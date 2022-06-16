@@ -1,0 +1,87 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+body{
+    background-color: grey;
+}
+
+movie-card{
+    position: fixed;
+    background-color: white;
+    height: 400px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+}
+
+.movie-card{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0;
+}
+
+.movie-img{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+
+.movie-title{
+    width: 100%;
+    height: 18%;
+    background-color: transparent;
+    margin: 0;
+    position: absolute;
+    transform: translateY(-165px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    color: rgba(255, 255, 255, 0.671);
+    font-size: 5rem;
+}
+
+.btn-section{
+    height: 19%;
+    width: 100%;
+    position: absolute;
+    transform: translateY(-80px);
+    
+}
+
+.like-btn{
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.747);
+    font-size: 1.5rem;
+    color: white;
+}
+
+.like-btn:hover{
+    background-color: rgba(48, 47, 47, 0.747);
+}
+
+.next-btn{
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.747);
+    font-size: 1.5rem;
+    color: white;
+}
+
+.next-btn:hover{
+    background-color: rgba(48, 47, 47, 0.747);
+}
