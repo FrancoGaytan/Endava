@@ -1,0 +1,120 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.app {
+  width: 300px;
+  height: 550px;
+  border-radius: 20px;
+  background-image: url("./assets/background.jpg");
+  overflow: auto;
+}
+
+.searchSection {
+  background-color: lightblue;
+  border-radius: 20px 20px 0 0;
+  padding-bottom: 25px;
+  overflow: hidden;
+}
+
+.input {
+  margin-top: 50px;
+  width: 60%;
+  padding-bottom: 7px;
+  padding-left: 5px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid #a08df2;
+  color: black;
+  border-color: rgba(0, 0, 0, 0.286);
+}
+
+.searchBtn {
+  margin-left: 10px;
+  background-color: rgb(45, 64, 193);
+  border-radius: 1px;
+  font-size: 8px;
+}
+
+.searchBtn:focus {
+  outline: none;
+}
+
+.audioSection {
+  display: flex;
+}
+
+.unknownWord {
+  color: grey;
+}
+
+.searchedWord {
+  margin-left: 10%;
+  text-transform: capitalize;
+}
+
+h3 {
+  margin-left: 10px;
+  margin-right: 20px;
+  text-align: left;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.phoneticDesc {
+  color: rgba(0, 0, 255, 0.604);
+  margin: 0;
+  margin-left: 30px;
+  display: flex;
+}
+
+h5 {
+  margin-right: 15px;
+}
+
+.audioBtn {
+  background-color: rgb(220, 53, 81);
+  background-image: url("./assets/play.png");
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: transparent;
+  margin-left: 50%;
+  margin-top: 10px;
+}
+
+.audioBtn::selection {
+  /*esto no esta funcionando*/
+  border: transparent;
+}
+
+.audioBtn::before {
+  position: absolute;
+  content: "";
+  border-left: 16px solid white;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  transform: translate(-6px, -7px);
+}
+
+.audioBtn:hover {
+  background-color: rgb(254, 0, 42);
+}
+
+.audioBtn:focus {
+  outline: none;
+}
+
+.meaningsSection {
+  margin-left: 10%;
+  text-align: left;
+  color: grey;
+}

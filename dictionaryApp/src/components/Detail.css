@@ -1,0 +1,17 @@
+.audioSection {
+  display: flex;
+}
+
+h3 {
+  margin-left: 10px;
+  margin-right: 20px;
+  text-align: left;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.meaningsSection {
+  margin-left: 10%;
+  text-align: left;
+  color: grey;
+}
